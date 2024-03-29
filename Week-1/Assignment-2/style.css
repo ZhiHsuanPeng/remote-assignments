@@ -1,0 +1,66 @@
+/* Basic Style */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+header {
+  background-color: #dad3d3;
+}
+.siteTitle{
+  padding: 0 20px 0 0
+}
+.flexContainer {
+  background-color: bisque;
+}
+.navbar {
+  list-style: none;
+  padding: 0;
+}
+li {
+  padding: 0 20px;
+}
+.banner {
+  height: 250px;
+  background-color: rgb(167, 185, 224);
+  font-size: 3rem;
+  font-weight: 500;
+}|
+h1{
+    text-align:center
+}
+.content {
+  padding: 20px;
+  border: 1px solid;
+  margin: 5px;
+}
+
+/* Flexbox Layout */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+.navbar {
+  display: flex;
+}
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flexContainer {
+  display: flex;
+}
+
+.content {
+  flex-grow: 1;
+}
