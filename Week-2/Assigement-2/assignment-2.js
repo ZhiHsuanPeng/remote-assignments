@@ -1,6 +1,5 @@
 function avg(data) {
-  let total = 0;
-  data.products.forEach((product) => (total += product.price));
+  let total = data.products.reduce((acc, product) => acc + product.price, 0);
   return total / data.size;
 }
 console.log(
