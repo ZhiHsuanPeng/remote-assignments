@@ -19,5 +19,3 @@ function binarySearchPosition(arr, target) {
 // print 0
 // console.log(binarySearchPosition([1, 2, 5, 6, 7], 6)); // should
 //  print 3
-
-console.log(binarySearchPosition([1, 2, 5, 6, 7], 6));
