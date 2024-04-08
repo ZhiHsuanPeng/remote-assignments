@@ -53,7 +53,7 @@ li {
   margin: 5px;
 }
 
-footer {
+.btn {
   margin: 15px;
 }
 .cta {
@@ -88,7 +88,7 @@ header {
 }
 
 .banner,
-footer,
+.btn,
 .cta {
   display: flex;
   align-items: center;

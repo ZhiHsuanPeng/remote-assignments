@@ -1,3 +1,4 @@
+const startTime = Date.now();
 function binarySearchPosition(arr, target, start = 0, end = arr.length - 1) {
   if (target > arr[end] || target < arr[start]) {
     return "Target Not Found";
@@ -16,4 +17,7 @@ function binarySearchPosition(arr, target, start = 0, end = arr.length - 1) {
 // console.log(binarySearchPosition([1, 2, 5, 6, 7], 6)); // should
 //  print 3
 
-console.log(binarySearchPosition([1, 2, 5, 6, 7], 6));
+console.log(binarySearchPosition([1, 2, 5, 6, 7, 9, 18, 50, 79, 90], 6));
+
+const endTime = Date.now();
+console.log(`Execution time: ${endTime - startTime} ms`);
