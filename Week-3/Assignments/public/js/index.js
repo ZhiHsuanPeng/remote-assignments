@@ -11,11 +11,18 @@ const sendPostRequest = async (number) => {
 };
 
 form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const input = document.querySelector("input").value;
-  const result = await sendPostRequest(input);
-  document
-    .querySelector("body")
-    .insertAdjacentHTML("beforeend", `<h2>The result is ${result.data}!</h2>`);
-  setTimeout(() => document.querySelector("h2").remove(), 2000);
+  try {
+    e.preventDefault();
+    const input = document.querySelector("input").value;
+    const result = await sendPostRequest(input);
+    document
+      .querySelector("body")
+      .insertAdjacentHTML(
+        "beforeend",
+        `<h2>The result is ${result.data}!</h2>`
+      );
+    setTimeout(() => document.querySelector("h2").remove(), 2000);
+  } catch (err) {
+    console.log(err);
+  }
 });
