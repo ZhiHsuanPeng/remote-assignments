@@ -53,6 +53,16 @@ app.get("/trackName", (req, res) => {
   res.redirect("/myName");
 });
 
+// Practicing Global Error Handling
+app.all("*", (req, res, next) => {
+  next(new Error(`Cannot find ${req.originalUrl} on this server!`));
+});
+
+app.use((err, req, res, next) => {
+  const message = err.message;
+  res.send(message);
+});
+
 const server = app.listen(3000, () => {
   console.log("listening on port 3000...");
 });
