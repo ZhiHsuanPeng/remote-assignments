@@ -5,7 +5,7 @@ function twoSum(nums, target) {
     }
   }
 }
-console.log(twoSum([1, 2, 3, 4, 7, 11, 15], 9));
+console.log(twoSum([1, 2, 3, 7, 4, 11, 15], 9));
 /*
 For example:
 twoSum([2, 7, 11, 15], 9);
