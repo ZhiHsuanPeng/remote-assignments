@@ -10,26 +10,31 @@ const AddFromOne = (number) => {
   return ((1 + number) * number) / 2;
 };
 
+// Assignment 1
 app.get("/", (req, res) => {
   res.send("<h1>Hello My Server!</h1>");
 });
 
+// Assignment 2
 app.get("/data", (req, res) => {
   const queryString = req.query;
 
   if (Object.keys(queryString).length === 0) {
-    res.status(400).end("Lack of Parameter!");
+    res.status(400).json({ result: "Lack of Parameter!" });
   } else if (/[^0-9]/.test(queryString.number)) {
-    res.status(400).end("Wrong Parameter! Please Type In A Number");
+    res
+      .status(400)
+      .send({ result: "Wrong Parameter! Please Type In A Number" });
   }
 
   const result = AddFromOne(queryString.number * 1);
-  res.status(200).json({ result: result });
+  res.status(200).json({ data: result });
 });
 
+// Assignment 4
 app.get("/myName", (req, res) => {
   if (req.cookies && req.cookies.name) {
-    res.send(req.cookies.name);
+    res.send(`Hello! ${req.cookies.name}`);
   } else {
     const form = `<form action='/trackName' method="get">
       <label>
@@ -47,6 +52,7 @@ app.get("/trackName", (req, res) => {
   res.cookie("name", name);
   res.redirect("/myName");
 });
+
 const server = app.listen(3000, () => {
   console.log("listening on port 3000...");
 });
