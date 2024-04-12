@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 
-const AddFromOne = (number) => {
+const addFromOne = (number) => {
   return ((1 + number) * number) / 2;
 };
 
@@ -27,7 +27,7 @@ app.get("/data", (req, res) => {
       .send({ result: "Wrong Parameter! Please Type In A Number" });
   }
 
-  const result = AddFromOne(queryString.number * 1);
+  const result = addFromOne(queryString.number * 1);
   res.status(200).json({ data: result });
 });
 
