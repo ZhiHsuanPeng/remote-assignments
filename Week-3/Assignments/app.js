@@ -20,11 +20,11 @@ app.get("/data", (req, res) => {
   const queryString = req.query;
 
   if (Object.keys(queryString).length === 0) {
-    res.status(400).json({ result: "Lack of Parameter!" });
+    return res.status(400).json({ result: "Lack of Parameter!" });
   } else if (/[^0-9]/.test(queryString.number)) {
-    res
+    return res
       .status(400)
-      .send({ result: "Wrong Parameter! Please Type In A Number" });
+      .json({ result: "Wrong Parameter! Please Type In A Number" });
   }
 
   const result = addFromOne(queryString.number * 1);
