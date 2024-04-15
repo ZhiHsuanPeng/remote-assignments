@@ -18,3 +18,10 @@ function delayedResultPromise(n1, n2, delayTime) {
 
 delayedResultPromise(4, 5, 3000).then(console.log);
 // 9 (4+5) will be shown in the console after 3 seconds
+
+async function main(n1, n2, delayTime) {
+  const res = await delayedResultPromise(n1, n2, delayTime);
+  console.log(res);
+  return res;
+}
+main(4, 5, 3000);
