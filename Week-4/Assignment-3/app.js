@@ -12,7 +12,7 @@ app.use(express.json());
 
 // View rendering
 app.get("/member", (req, res) => {
-  res.send("<h1>This is a member page!</h1>");
+  res.send("<h1>Hello! Member!</h1>");
 });
 app.get("/home", (req, res) => {
   res.render("login");
