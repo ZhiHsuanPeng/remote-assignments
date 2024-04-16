@@ -9,6 +9,9 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 
+app.get("/member", (req, res) => {
+  res.send("<h1>This is a member page!</h1>");
+});
 app.get("/home", (req, res) => {
   res.render("login");
 });
@@ -19,20 +22,25 @@ app.get("/signup", (req, res) => {
 
 app.post("/api/v1/users/signup", async (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
 
   // 1.) Check if the email already exists
   const user = await db.getUserByEmail(email);
 
   if (user) {
-    return res.status(400).json({ message: "User already exists!" });
+    return res.status(400).json({
+      status: "fail",
+      message: "User already exists! Please use other email to sign up!",
+    });
   }
 
   // 2.) Add user to the user table
   const newUser = await db.createUser(email, password);
 
   // 3.) Send some response
-  res.status(200).json({ newUser: newUser, message: "Sign up successfully!" });
+  res.status(200).json({
+    newUser: newUser,
+    message: "Sign up successfully! Press Yes to redirect!",
+  });
 });
 
 app.post("/api/v1/users/login", async (req, res) => {
@@ -43,7 +51,10 @@ app.post("/api/v1/users/login", async (req, res) => {
   if (!user) {
     return res
       .status(400)
-      .json({ message: "Wrong email or password! Please try again" });
+      .json({
+        status: "fail",
+        message: "Wrong email or password! Please try again",
+      });
   }
 
   // 2.) Send response
