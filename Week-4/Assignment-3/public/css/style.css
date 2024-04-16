@@ -1,0 +1,117 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 0 5rem;
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login__heading {
+  margin: 0rem 0 4rem 0;
+}
+
+.nav,
+.nav:link,
+.nav:hover {
+  color: #767171;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav__aboutus,
+.nav__contact {
+  color: inherit;
+  text-decoration: none;
+  padding: 0 2rem;
+}
+
+main {
+  height: 60vh;
+  display: flex;
+  font-size: 3rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.login-form,
+.signup-form {
+  margin: 0 auto;
+  font-size: 3rem;
+  max-width: 55rem;
+  background-color: #fff;
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+  border-radius: 5px;
+}
+
+.signup-form {
+  width: 40rem;
+}
+
+.form__label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.form__input {
+  display: block;
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 1.25rem 1.75rem;
+  border: none;
+  width: 100%;
+  background-color: #fff;
+  background-color: #f2f2f2;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* Pseudo element (a visible thing that isn't really in the DOM).
+        Also needs -ms- */
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+.form__link {
+  display: block;
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 1.25rem 0;
+  text-decoration: none;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  margin: 2rem 0 0 0;
+  font-size: 1.6rem;
+  padding: 1.4rem 3rem;
+  border-radius: 10rem;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.4s;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+}

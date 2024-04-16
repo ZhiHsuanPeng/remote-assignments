@@ -1,0 +1,16 @@
+extends base
+
+block content
+    main.main
+        .signup-form
+            h2.login__heading Sign Up
+            form.form
+                .form__group
+                    label.form__label(for='email') Email 
+                    input#email.form__input(type='email', placeholder='you@example.com', required)
+                .form__group
+                    label.form__label(for='password') Password
+                    input#password.form__input(type='password', placeholder='••••••••', required)
+                .form__group
+                    button.btn Sign Up
+                
