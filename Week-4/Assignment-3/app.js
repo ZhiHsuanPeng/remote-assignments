@@ -17,7 +17,6 @@ app.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-//TODO:
 app.post("/api/v1/users/signup", async (req, res) => {
   const { email, password } = req.body;
   console.log(email, password);
@@ -30,13 +29,26 @@ app.post("/api/v1/users/signup", async (req, res) => {
   }
 
   // 2.) Add user to the user table
-
   const newUser = await db.createUser(email, password);
 
   // 3.) Send some response
-  res.status(200).json({ newUser: newUser });
+  res.status(200).json({ newUser: newUser, message: "Sign up successfully!" });
 });
-app.get("api/v1/users/login", (req, res) => {});
+
+app.post("/api/v1/users/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  // 1.) Get user by the email and password provided by the user and check if the pair exists
+  const user = await db.getUserByEmailandPassword(email, password);
+  if (!user) {
+    return res
+      .status(400)
+      .json({ message: "Wrong email or password! Please try again" });
+  }
+
+  // 2.) Send response
+  res.status(200).json({ message: "Log in successfully!" });
+});
 
 app.listen(3000, () => {
   console.log("Listening...");

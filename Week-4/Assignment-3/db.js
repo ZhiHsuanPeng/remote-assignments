@@ -11,7 +11,7 @@ const pool = mysql
   })
   .promise();
 
-exports.getUser = async () => {
+exports.getAllUser = async () => {
   const [rows] = await pool.query("SELECT * FROM user");
   console.log(rows);
   return rows;
@@ -21,6 +21,14 @@ exports.getUserByEmail = async (email) => {
   const [rows] = await pool.query("SELECT * FROM user WHERE email = ? ", [
     email,
   ]);
+  return rows[0];
+};
+
+exports.getUserByEmailandPassword = async (email, password) => {
+  const [rows] = await pool.query(
+    "SELECT * FROM user WHERE email = ? and password = ?",
+    [email, password]
+  );
   return rows[0];
 };
 
