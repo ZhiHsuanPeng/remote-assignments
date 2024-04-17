@@ -8,4 +8,9 @@ CREATE TABLE user (
 );
 
 INSERT INTO user (email, password)
-VALUES('testing1234', 'passwordtesting');
+VALUES
+        ('jeremy@gmail.com', 'user1234'),
+        ('jason@gmail.com', 'user1234'),
+        ('meggy@gmail.com', 'user1234'),
+        ('amy@gmail.com', 'user1234'),
+        ('admin@gmail.com', 'admin1234');
